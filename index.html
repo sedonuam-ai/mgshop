@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>SAME GLOBAL SERVICES — Gestion Stock · Ventes</title>
+<meta name="description" content="Application de gestion de stock et de ventes — SAME GLOBAL SERVICES" />
+<meta name="theme-color" content="#0E1721" />
+
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEgUlEQVR4nO3dQW4jRRiG4XLEEgkugMIBOEHQHGAWYYlYcbHZsUKzJEdA5ARo1hNxAZDYhwVK5JnYsdvdXVVd3/OsRqPE3Y7+t6vaip1daez69uax9TnQ1sPd/a7Vsasf2MBzSs0gqhzI0HOptWNY9cENPktZK4RVHtTgs5alQ1j0wQw+tSwVwiIPYvBpZW4IV3NPwPDT0tz5mxWA4acHc+bwouXD4NOrqVuiySuA4adnU+dzUgCGny2YMqdnB2D42ZJz5/WsAAw/W3TO3M5+GRS27GQArv5s2an5fTUAw88IXpvjowEYfkZybJ7dAxDtYACu/ozo0FxbAYj2IgBXf0b2+XxbAYj2SQCu/iTYn3MrANGeA3D1J8nTvFsBiCYAou1Ksf0hlxWAaAIgmgCIdmX/TzIrANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEC0L1qfQEt//vJr61Pownc//9T6FJqxAhCt2xXg429/XK99jH///uth7WNsQY2f9bc/fN/lz7rbAGr78utvVh+CQ54irH188f+v2wBqXDH27wFaXaGezqH28Xt47j1wD0A0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQLRu3xFWW+tPiGh9/FTdBuBN8fUkvyneFohou+vbm8fWJ9HK/rYj7cOhkp/7PisA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEC0bt8SWftN8a3+UHYrtZ+7N8VDh7r9WJSUvxTfSvJz32cFIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaN2+IaY2f6g6kwDCfXj3trx/8/L/f/z9q/on04AAAn149/bk17x/88/zv0eOodtPhWAd+4M9xagRuAkOcunwz/3engkgxBIDPGIEAgiw5OCOFoEABrfGwI4UgQCIJgCiCWBga25VRtkGCYBoAiCaAIgmAKIJgGgCGNiav8A2yi/HCYBoAiCaAAa3xlZllO1PKQKIsOTAjjT8pQggxhKDO9rwlyKAKHMGeMThL0UAcS4Z5FGHvxSfChFpf6CP/VbnyEO/TwDhUgb9GFsgogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiXT3c3e9anwS0YgUgmgCIJgCiXZVSivsAEj3c3e+sAEQTANGeA7ANIsnTvFsBiPZJAFYBEuzPuRWAaC8CsAowss/n2wpAtIMBWAUY0aG5tgIQ7WgAVgFGcmyeX10BRMAIXpvjk1sgEbBlp+bXPQDRzgrAKsAWnTO3Z68AImBLzp3XSVsgEbAFU+Z08j2ACOjZ1PmcNczXtzePc74flnLphXnWq0BWA3owZw5nvwwqAlqaO3+LDq8tEbUsdeFd5eotBNay9I5j1e2LEFjKWlvtKvt3IXCpte8xq9/AioFTar6w8h/yai71ATSidwAAAABJRU5ErkJggg==" />
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEgUlEQVR4nO3dQW4jRRiG4XLEEgkugMIBOEHQHGAWYYlYcbHZsUKzJEdA5ARo1hNxAZDYhwVK5JnYsdvdXVVd3/OsRqPE3Y7+t6vaip1daez69uax9TnQ1sPd/a7Vsasf2MBzSs0gqhzI0HOptWNY9cENPktZK4RVHtTgs5alQ1j0wQw+tSwVwiIPYvBpZW4IV3NPwPDT0tz5mxWA4acHc+bwouXD4NOrqVuiySuA4adnU+dzUgCGny2YMqdnB2D42ZJz5/WsAAw/W3TO3M5+GRS27GQArv5s2an5fTUAw88IXpvjowEYfkZybJ7dAxDtYACu/ozo0FxbAYj2IgBXf0b2+XxbAYj2SQCu/iTYn3MrANGeA3D1J8nTvFsBiCYAou1Ksf0hlxWAaAIgmgCIdmX/TzIrANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEC0L1qfQEt//vJr61Pownc//9T6FJqxAhCt2xXg429/XK99jH///uth7WNsQY2f9bc/fN/lz7rbAGr78utvVh+CQ54irH188f+v2wBqXDH27wFaXaGezqH28Xt47j1wD0A0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQLRu3xFWW+tPiGh9/FTdBuBN8fUkvyneFohou+vbm8fWJ9HK/rYj7cOhkp/7PisA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEC0bt8SWftN8a3+UHYrtZ+7N8VDh7r9WJSUvxTfSvJz32cFIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaN2+IaY2f6g6kwDCfXj3trx/8/L/f/z9q/on04AAAn149/bk17x/88/zv0eOodtPhWAd+4M9xagRuAkOcunwz/3engkgxBIDPGIEAgiw5OCOFoEABrfGwI4UgQCIJgCiCWBga25VRtkGCYBoAiCaAIgmAKIJgGgCGNiav8A2yi/HCYBoAiCaAAa3xlZllO1PKQKIsOTAjjT8pQggxhKDO9rwlyKAKHMGeMThL0UAcS4Z5FGHvxSfChFpf6CP/VbnyEO/TwDhUgb9GFsgogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiXT3c3e9anwS0YgUgmgCIJgCiXZVSivsAEj3c3e+sAEQTANGeA7ANIsnTvFsBiPZJAFYBEuzPuRWAaC8CsAowss/n2wpAtIMBWAUY0aG5tgIQ7WgAVgFGcmyeX10BRMAIXpvjk1sgEbBlp+bXPQDRzgrAKsAWnTO3Z68AImBLzp3XSVsgEbAFU+Z08j2ACOjZ1PmcNczXtzePc74flnLphXnWq0BWA3owZw5nvwwqAlqaO3+LDq8tEbUsdeFd5eotBNay9I5j1e2LEFjKWlvtKvt3IXCpte8xq9/AioFTar6w8h/yai71ATSidwAAAABJRU5ErkJggg==" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="SAME GS Stock" />
+
+<style>
+  :root{
+    --paper:#101B27; --panel:#16233285; --panel-solid:#16233299; --border:#2E4257; --ink:#0E1721;
+    --green:#2E7A57; --green-dark:#24603F; --ochre:#D79A3C; --ochre-dark:#BD8530;
+    --rust:#C24A38; --rust-dark:#A13C2C; --muted:#93A0AF; --muted2:#93A0AF;
+    --text:#EDEFF2; --input-bg:#1B2837; --input-border:#3A4E64; --hover:#20304190;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%}
+  body{
+    background:var(--paper); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace; }
+  .slab{ font-family:Georgia,"Times New Roman",serif; font-weight:700; }
+
+  #app{ display:flex; min-height:100vh; }
+
+  /* Sidebar */
+  #sidebar{
+    width:260px; flex-shrink:0; background:var(--ink); color:var(--text);
+    display:flex; flex-direction:column; position:fixed; top:0; bottom:0; left:0;
+    transform:translateX(0); transition:transform .25s ease; z-index:40;
+    border-right:1px solid var(--border);
+  }
+  #sidebar.closed{ transform:translateX(-100%); }
+  .brand{ padding:22px 20px; border-bottom:1px solid rgba(255,255,255,.08); }
+  .brand .eyebrow{ font-size:10px; letter-spacing:.25em; color:var(--ochre); font-weight:700; margin-bottom:6px; }
+  .brand h1{ font-size:19px; line-height:1.25; margin:0; color:var(--text); }
+  .brand .sub{ font-size:11px; color:var(--muted); margin-top:6px; }
+  .brand-row{ display:flex; align-items:center; gap:10px; }
+  .brand-logo{ width:34px; height:34px; border-radius:8px; flex-shrink:0; }
+
+  nav{ flex:1; overflow-y:auto; padding:10px 0; }
+  .grp-label{ padding:7px 20px; font-size:10px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; background:rgba(255,255,255,.03); color:var(--muted); }
+  .navlist{ list-style:none; margin:0; padding:0; }
+  .navlink{
+    width:100%; display:flex; align-items:center; gap:10px; padding:9px 20px;
+    font-size:13.5px; text-align:left; border:0; border-left:4px solid transparent;
+    background:transparent; color:var(--muted); cursor:pointer;
+  }
+  .navlink:hover{ background:rgba(255,255,255,.05); color:#fff; }
+  .navlink.active{ border-left-color:var(--ochre); background:rgba(255,255,255,.08); color:#fff; font-weight:600; }
+  .navlink svg{ flex-shrink:0; }
+  .sidebar-foot{ padding:12px 20px; border-top:1px solid rgba(255,255,255,.08); font-size:10px; color:var(--muted); }
+
+  /* Main */
+  #main{ flex:1; margin-left:260px; padding:28px; min-height:100vh; display:flex; justify-content:center; background:var(--paper); }
+  .maxw{ max-width:920px; width:100%; margin:0 auto; }
+  .topbar{ display:none; align-items:center; gap:12px; margin-bottom:16px; }
+  #menuBtn{ background:var(--panel-solid); color:var(--text); border:1px solid var(--border); border-radius:8px; width:38px; height:38px; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+
+  header.section-head{ margin-bottom:22px; text-align:center; }
+  .stamp{ display:inline-block; transform:rotate(-3deg); border:2px solid var(--ochre); color:var(--ochre); border-radius:3px; padding:2px 8px; font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; opacity:.9; }
+  h1.title{ font-size:24px; margin:10px 0 0; color:var(--text); }
+
+  .panel{ background:var(--panel-solid); border:1px solid var(--border); border-radius:8px; margin-bottom:24px; box-shadow:0 2px 10px rgba(0,0,0,.25); margin-left:auto; margin-right:auto; width:100%; }
+  .panel-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid var(--border); padding:14px 20px; flex-wrap:wrap; }
+  .panel-eyebrow{ font-size:10px; text-transform:uppercase; letter-spacing:.2em; color:var(--ochre); font-weight:700; margin-bottom:2px; }
+  .panel-title{ font-size:17px; font-weight:700; margin:0; color:var(--text); }
+  .panel-body{ padding:20px; }
+
+  .field{ display:block; margin-bottom:0; }
+  .field .lbl{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:600; margin-bottom:5px; }
+  .input, select.input{
+    width:100%; background:var(--input-bg); border:1px solid var(--input-border); border-radius:6px; padding:9px 11px;
+    color:var(--text); font-family:ui-monospace,monospace; font-size:13.5px;
+  }
+  .input:focus{ outline:2px solid var(--green); outline-offset:1px; border-color:var(--green); }
+  .input:disabled{ opacity:.55; }
+  select.input option{ background:var(--input-bg); color:var(--text); }
+
+  .grid{ display:grid; gap:12px; }
+  .grid-2{ grid-template-columns:repeat(2,1fr); }
+  .grid-3{ grid-template-columns:repeat(3,1fr); }
+  .grid-4{ grid-template-columns:repeat(4,1fr); }
+  @media(max-width:700px){ .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; } }
+
+  .btn{ display:inline-flex; align-items:center; gap:7px; padding:9px 16px; border-radius:6px; font-size:13.5px; font-weight:600; border:0; cursor:pointer; transition:background .15s; }
+  .btn-primary{ background:var(--green); color:#F3EFE2; } .btn-primary:hover{ background:var(--green-dark); }
+  .btn-danger{ background:var(--rust); color:#F3EFE2; } .btn-danger:hover{ background:var(--rust-dark); }
+  .btn-ochre{ background:var(--ochre); color:#241605; } .btn-ochre:hover{ background:var(--ochre-dark); }
+  .btn-ghost{ background:transparent; color:var(--text); border:1px solid var(--border); } .btn-ghost:hover{ background:rgba(255,255,255,.06); }
+  .btn:disabled{ opacity:.4; cursor:not-allowed; }
+
+  table.ledger{ width:100%; border-collapse:collapse; }
+  table.ledger th{ font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ochre); text-align:left; padding:8px 10px; border-bottom:2px solid var(--border); }
+  table.ledger td{ padding:8px 10px; border-bottom:1px solid var(--border); font-size:13px; color:var(--text); }
+  table.ledger tbody tr:hover{ background:var(--hover); }
+  .tr-right{ text-align:right; }
+  table.ledger tfoot td{ padding-top:12px; font-weight:700; }
+
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:24px; }
+  @media(max-width:700px){ .kpis{ grid-template-columns:repeat(2,1fr); } }
+  .kpi{ background:var(--panel-solid); border:1px solid var(--border); border-radius:8px; padding:16px; }
+  .kpi svg{ color:var(--ochre); }
+  .kpi .val{ font-family:ui-monospace,monospace; font-size:20px; font-weight:700; margin-top:8px; color:var(--text); }
+  .kpi .lbl{ font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-top:4px; }
+
+  .empty{ display:flex; flex-direction:column; align-items:center; justify-content:center; padding:44px 0; color:var(--muted); gap:8px; text-align:center; }
+
+  .note{ display:flex; gap:10px; background:rgba(194,74,56,.12); border:1px solid rgba(194,74,56,.35); border-radius:6px; padding:14px; margin-bottom:16px; color:#F2C2B8; font-size:13.5px; }
+  .note.ochre{ background:rgba(215,154,60,.12); border-color:rgba(215,154,60,.35); color:#F0D6A8; }
+  .box{ background:var(--input-bg); border:1px solid var(--border); border-radius:6px; padding:14px; font-family:ui-monospace,monospace; font-size:13.5px; color:var(--text); }
+
+  .modal-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.55); display:flex; align-items:center; justify-content:center; z-index:100; padding:16px; }
+  .modal{ background:var(--panel-solid); border:1px solid var(--border); border-radius:8px; max-width:380px; width:100%; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.45); }
+  .modal h3{ margin:6px 0 8px; font-size:16px; display:flex; align-items:center; gap:8px; color:var(--rust); }
+  .modal p{ font-size:13.5px; color:var(--muted); margin-bottom:18px; }
+  .modal .actions{ display:flex; justify-content:flex-end; gap:8px; }
+
+  #toast{ position:fixed; bottom:20px; right:20px; z-index:200; padding:12px 16px; border-radius:6px; font-size:13.5px; font-weight:600; box-shadow:0 6px 20px rgba(0,0,0,.4); display:none; }
+  #toast.success{ background:var(--green); color:#F3EFE2; }
+  #toast.error{ background:var(--rust); color:#F3EFE2; }
+
+  a{ color:inherit; }
+
+  @media(max-width:880px){
+    #sidebar{ transform:translateX(-100%); }
+    #sidebar.open{ transform:translateX(0); }
+    #main{ margin-left:0; padding:18px; }
+    .topbar{ display:flex; }
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <aside id="sidebar">
+    <div class="brand">
+      <div class="brand-row">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEgUlEQVR4nO3dQW4jRRiG4XLEEgkugMIBOEHQHGAWYYlYcbHZsUKzJEdA5ARo1hNxAZDYhwVK5JnYsdvdXVVd3/OsRqPE3Y7+t6vaip1daez69uax9TnQ1sPd/a7Vsasf2MBzSs0gqhzI0HOptWNY9cENPktZK4RVHtTgs5alQ1j0wQw+tSwVwiIPYvBpZW4IV3NPwPDT0tz5mxWA4acHc+bwouXD4NOrqVuiySuA4adnU+dzUgCGny2YMqdnB2D42ZJz5/WsAAw/W3TO3M5+GRS27GQArv5s2an5fTUAw88IXpvjowEYfkZybJ7dAxDtYACu/ozo0FxbAYj2IgBXf0b2+XxbAYj2SQCu/iTYn3MrANGeA3D1J8nTvFsBiCYAou1Ksf0hlxWAaAIgmgCIdmX/TzIrANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEC0L1qfQEt//vJr61Pownc//9T6FJqxAhCt2xXg429/XK99jH///uth7WNsQY2f9bc/fN/lz7rbAGr78utvVh+CQ54irH188f+v2wBqXDH27wFaXaGezqH28Xt47j1wD0A0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQLRu3xFWW+tPiGh9/FTdBuBN8fUkvyneFohou+vbm8fWJ9HK/rYj7cOhkp/7PisA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEC0bt8SWftN8a3+UHYrtZ+7N8VDh7r9WJSUvxTfSvJz32cFIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaN2+IaY2f6g6kwDCfXj3trx/8/L/f/z9q/on04AAAn149/bk17x/88/zv0eOodtPhWAd+4M9xagRuAkOcunwz/3engkgxBIDPGIEAgiw5OCOFoEABrfGwI4UgQCIJgCiCWBga25VRtkGCYBoAiCaAIgmAKIJgGgCGNiav8A2yi/HCYBoAiCaAAa3xlZllO1PKQKIsOTAjjT8pQggxhKDO9rwlyKAKHMGeMThL0UAcS4Z5FGHvxSfChFpf6CP/VbnyEO/TwDhUgb9GFsgogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiXT3c3e9anwS0YgUgmgCIJgCiXZVSivsAEj3c3e+sAEQTANGeA7ANIsnTvFsBiPZJAFYBEuzPuRWAaC8CsAowss/n2wpAtIMBWAUY0aG5tgIQ7WgAVgFGcmyeX10BRMAIXpvjk1sgEbBlp+bXPQDRzgrAKsAWnTO3Z68AImBLzp3XSVsgEbAFU+Z08j2ACOjZ1PmcNczXtzePc74flnLphXnWq0BWA3owZw5nvwwqAlqaO3+LDq8tEbUsdeFd5eotBNay9I5j1e2LEFjKWlvtKvt3IXCpte8xq9/AioFTar6w8h/yai71ATSidwAAAABJRU5ErkJggg==" class="brand-logo" alt="Logo" />
+        <div>
+          <div class="eyebrow">REGISTRE</div>
+          <h1 class="slab">SAME GLOBAL<br/>SERVICES</h1>
+        </div>
+      </div>
+      <div class="sub">Gestion Stock · Ventes</div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="sidebar-foot">Données enregistrées sur cet appareil — fonctionne hors connexion</div>
+  </aside>
+
+  <main id="main">
+    <div class="topbar">
+      <button id="menuBtn" aria-label="Menu">☰</button>
+      <strong class="slab">SAME GLOBAL SERVICES</strong>
+    </div>
+    <div class="maxw" id="content"></div>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
